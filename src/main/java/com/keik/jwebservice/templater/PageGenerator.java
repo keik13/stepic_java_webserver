@@ -12,6 +12,8 @@ import java.io.Writer;
 import java.util.Map;
 
 /**
+ * Доработанный мной генератор, работает с более новой версией freemaker
+ *
  * @author v.chibrikov
  *         <p>
  *         Пример кода для курса на https://stepic.org/
@@ -24,6 +26,13 @@ public class PageGenerator {
 
   private static PageGenerator pageGenerator;
   private final Configuration cfg;
+
+  //заменил деприкейтед пустой констурктор new Configuration()
+  private PageGenerator() {
+    cfg = new Configuration(new Version(2, 3, 23));
+    //добавил строку с загрузкой папки с хтмл, без этого не компилилось
+    cfg.setClassForTemplateLoading(this.getClass(), HOME_DIR);
+  }
 
   public static PageGenerator instance() {
     if (pageGenerator == null)
@@ -40,11 +49,6 @@ public class PageGenerator {
       e.printStackTrace();
     }
     return stream.toString();
-  }
-
-  private PageGenerator() {
-    cfg = new Configuration(new Version(2, 3, 23));
-    cfg.setClassForTemplateLoading(this.getClass(), HOME_DIR);
   }
 }
 
