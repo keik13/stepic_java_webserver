@@ -19,6 +19,16 @@ import java.util.Map;
  */
 public class AllRequestsServlet extends HttpServlet {
 
+  private static Map<String, Object> createPageVariablesMap(HttpServletRequest request) {
+    Map<String, Object> pageVariables = new HashMap<>();
+    pageVariables.put("method", request.getMethod());
+    pageVariables.put("URL", request.getRequestURL().toString());
+    pageVariables.put("pathInfo", request.getPathInfo());
+    pageVariables.put("sessionId", request.getSession().getId());
+    pageVariables.put("parameters", request.getParameterMap().toString());
+    return pageVariables;
+  }
+
   public void doGet(HttpServletRequest request,
                     HttpServletResponse response) throws ServletException, IOException {
 
@@ -48,15 +58,5 @@ public class AllRequestsServlet extends HttpServlet {
     pageVariables.put("message", message == null ? "" : message);
 
     response.getWriter().println(PageGenerator.instance().getPage("page.html", pageVariables));
-  }
-
-  private static Map<String, Object> createPageVariablesMap(HttpServletRequest request) {
-    Map<String, Object> pageVariables = new HashMap<>();
-    pageVariables.put("method", request.getMethod());
-    pageVariables.put("URL", request.getRequestURL().toString());
-    pageVariables.put("pathInfo", request.getPathInfo());
-    pageVariables.put("sessionId", request.getSession().getId());
-    pageVariables.put("parameters", request.getParameterMap().toString());
-    return pageVariables;
   }
 }
