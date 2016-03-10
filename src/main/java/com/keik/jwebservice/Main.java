@@ -7,8 +7,8 @@ import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 
 /**
- * Приложение генерит ответ на первое задание и содержит обновленный для послдених версий jetty и
- * freemaker код из примеров к первой части курса "Создание веб-сервиса"
+ * Приложение генерит ответ на первое задание и содержит обновленный до послдених версий jetty и freemaker
+ * часть кода взята из примеров к первой части курса на stepic.org "Создание веб-сервиса"
  * @author Коба Андрей Александрович.
  */
 public class Main {
