@@ -1,14 +1,15 @@
-package com.keik.jwebservice;
+package main;
 
-import com.keik.jwebservice.servlets.AllRequestsServlet;
-import com.keik.jwebservice.servlets.MirrorRequestsServlet;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
+import servlets.AllRequestsServlet;
+import servlets.MirrorRequestsServlet;
 
 /**
  * Приложение генерит ответ на первое задание и содержит обновленный до послдених версий jetty и freemaker
  * часть кода взята из примеров к первой части курса на stepic.org "Создание веб-сервиса"
+ *
  * @author Коба Андрей Александрович.
  */
 public class Main {

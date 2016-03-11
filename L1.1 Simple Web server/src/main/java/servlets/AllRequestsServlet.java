@@ -1,6 +1,6 @@
-package com.keik.jwebservice.servlets;
+package servlets;
 
-import com.keik.jwebservice.templater.PageGenerator;
+import templater.PageGenerator;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -30,7 +30,8 @@ public class AllRequestsServlet extends HttpServlet {
   }
 
   public void doGet(HttpServletRequest request,
-                    HttpServletResponse response) throws ServletException, IOException {
+                    HttpServletResponse response) throws ServletException, IOException
+  {
 
     Map<String, Object> pageVariables = createPageVariablesMap(request);
     pageVariables.put("message", "");
@@ -43,7 +44,8 @@ public class AllRequestsServlet extends HttpServlet {
   }
 
   public void doPost(HttpServletRequest request,
-                     HttpServletResponse response) throws ServletException, IOException {
+                     HttpServletResponse response) throws ServletException, IOException
+  {
     Map<String, Object> pageVariables = createPageVariablesMap(request);
 
     String message = request.getParameter("message");

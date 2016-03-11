@@ -1,4 +1,4 @@
-package com.keik.jwebservice.templater;
+package templater;
 
 import freemarker.template.Configuration;
 import freemarker.template.Template;
