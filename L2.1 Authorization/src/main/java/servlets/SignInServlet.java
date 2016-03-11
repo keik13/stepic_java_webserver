@@ -24,12 +24,12 @@ public class SignInServlet extends HttpServlet {
   {
     UserProfile user = accountService.getUserByLogin(request.getParameter("login"));
     if(user != null && user.getPass().equals(request.getParameter("password"))) {
+      response.getWriter().println("Authorized: " + user.getLogin());
       response.setContentType("text/html;charset=utf-8");
-      response.getWriter().println("Authorized: login");
       response.setStatus(HttpServletResponse.SC_OK);
     } else {
-      response.setContentType("text/html;charset=utf-8");
       response.getWriter().println("Unauthorized");
+      response.setContentType("text/html;charset=utf-8");
       response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
     }
   }

@@ -14,6 +14,8 @@ import servlets.SignUpServlet;
 import servlets.UsersServlet;
 
 /**
+ * Приложение генерит ответ на второе задание и содержит обновленный до послдених версий jetty
+ * часть кода взята из примеров ко второй части курса на stepic.org "Создание веб-сервиса"
  * @author Коба Андрей Александрович.
  */
 public class Main {
